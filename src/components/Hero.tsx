@@ -6,8 +6,13 @@ const Hero = () => {
     useGSAP(() => {
         gsap.to('#hero', {
             opacity: 1,
-            delay: 1.5            
-       } ) 
+            delay: 2            
+        }) 
+        gsap.to('#cta', {
+            opacity: 1,
+            y: -50,
+            delay: 2
+        })
     }, [])
     const [vedioSrc, setVedioSrc] = useState(
         window.innerWidth  < 760 ? smallHeroVideo : heroVideo
@@ -33,10 +38,12 @@ const Hero = () => {
               <div className="md:w-10/12 w-9/12">
                   <video autoPlay muted playsInline={true} key={vedioSrc}>
                       <source src={vedioSrc}   />
-                  </video>
-                  
-              
+                  </video>                                
               </div>
+          </div>
+          <div id="cta" className="flex flex-col items-center opacity-0 translate-y-20">
+              <a href="#hightlights" className="btn">Buy</a>
+              <p className="font-normal text-xl"> Form $199/month or  $999 </p>            
           </div>
 
       </section>
