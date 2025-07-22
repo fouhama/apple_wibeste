@@ -86,9 +86,6 @@ const VideoCarousel = () => {
             ease:'power2.inout'
         })
 
-
-
-
         gsap.to("#video", {
             opacity:1,
             scrollTrigger: {
