@@ -43,9 +43,7 @@ const VideoCarousel = () => {
             // eslint-disable-next-line prefer-const
             let anim = gsap.to(span[videoId], {
                 onUpdate: () => {
-                    const progress = Math.ceil(anim.progress() * 100)
-                    console.log(progress);
-                    
+                    const progress = Math.ceil(anim.progress() * 100)                            
                     if (progress != currentProgress) {
                         currentProgress = progress;
                         gsap.to(videoDivRef.current[videoId], {
@@ -141,6 +139,7 @@ const VideoCarousel = () => {
                                     onEnded={() =>
                                         i !== (hightlightsSlides.length - 1 ) ? handleProcess('video-end', i) : handleProcess('last-video', i)
                                     }
+                                className={`${list.id == 2 && 'translate-x-44'} pointer-events-none`}
                                 >
                                     <source src={list.video} type="video/mp4" />
                                 </video>
